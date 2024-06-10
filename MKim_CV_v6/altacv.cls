@@ -103,7 +103,11 @@
 \let\ratingmarker\cvRatingMarker  % for backward compatibility
 \newcommand{\cvDateMarker}{\faCalendar[regular]}
 \newcommand{\cvLocationMarker}{\faMapMarker}
+\newcommand{\cvUserMarker}{\faUser}
+\newcommand{\cvUsersMarker}{\faUsers}
 \newcommand{\locationname}{Location}
+\newcommand{\username}{User}
+\newcommand{\usersname}{Users}
 \newcommand{\datename}{Date}
 
 \RequirePackage{tikz}
@@ -184,14 +188,14 @@
             {\printinfo{\csuse{#2 symbol}}{##1}}%
             {\printinfo{\csuse{#2 symbol}}{##1}[##2]}%
         \else
-          \printinfo{\csuse{#2 symbol}}{##1}%
+          \printinfo{\csuse{#2 symbol}}{\textbf{##1}}%
         \fi%
       }%
     }
     { \csdef{#2}##1{%
         \if@withhyper
           \IfNoValueTF {#4}
-            {\printinfo{\csuse{#2 symbol}}{##1}}%
+            {\printinfo{\csuse{#2 symbol}}{\textbf{##1}}}%
             {\printinfo{\csuse{#2 symbol}}{##1}[\csuse{#2 hyperprefix}##1]}%
         \else
           \printinfo{\csuse{#2 symbol}}{##1}%
@@ -204,6 +208,7 @@
 \newcommand{\name}[1]{\def\@name{#1}}
 \newcommand{\tagline}[1]{\def\@tagline{#1}}
 \newcommand{\personalinfo}[1]{\def\@personalinfo{#1}}
+\NewInfoField{lang}{\faLanguage}
 \NewInfoField{email}{\faAt}[mailto:]
 \NewInfoField{mailaddress}{\faEnvelope}
 \NewInfoField{phone}{\faPhone}[tel:]
@@ -213,7 +218,9 @@
 \NewInfoField{github}{\faGithub}[https://github.com/]
 % v1.?? Use fontawesome5 for Orcid symbol
 \NewInfoField{orcid}{\faOrcid}[https://orcid.org/]
-\NewInfoField{location}{\cvLocationMarker}
+\NewInfoField{location}{\cvLocationMarker}[]
+\NewInfoField{User}{\cvUserMarker}
+\NewInfoField{Users}{\cvUsersMarker}
 
 % v1.2: Support for multiple photos
 \newlength{\altacv@photos@width}
@@ -277,7 +284,7 @@
   \endgroup\medskip
 }
 
-\renewenvironment{quote}{\color{accent}\itshape\large}{\par}
+\renewenvironment{quote}{\color{accent}\itshape\normalsize}{\par}
 
 \newcommand{\cvsection}[2][]{%
   \nointerlineskip\bigskip%  %% bugfix in v1.6.2
@@ -293,7 +300,7 @@
 
 % v1.1.4: fixes inconsistent font size
 % v1.7: adds accsupp ActualText for location and date markers
-\newcommand{\cvevent}[4]{%
+\newcommand{\cvevent}[6]{%
   {\large\color{emphasis}#1\par}
   \smallskip\normalsize
   \ifstrequal{#2}{}{}{
@@ -308,14 +315,48 @@
     {\small\makebox[0.5\linewidth][l]%
       {\BeginAccSupp{method=pdfstringdef,ActualText={\locationname:}}\cvLocationMarker\EndAccSupp{}%
         ~#4}%
+    }\par\smallskip}
+    \ifstrequal{#5}{}{}{%
+    {\small\makebox[0.5\linewidth][l]%
+      {\BeginAccSupp{method=pdfstringdef,ActualText={\username:}}\cvUserMarker\EndAccSupp{}%
+      ~#5}%
+    }}%
+  \ifstrequal{#6}{}{}{%
+    {\small\makebox[0.5\linewidth][l]%
+      {\BeginAccSupp{method=pdfstringdef,ActualText={\usersname:}}\cvUsersMarker\EndAccSupp{}%
+        ~#6}%
+    }}\par
+  \medskip\normalsize
+}
+
+\newcommand{\cvsubevent}[4]{%
+  {\large\color{emphasis}#1\par}
+  \smallskip\normalsize
+  %\ifstrequal{#2}{}{}{
+  %\textbf{\color{accent}#2}\par
+  %\smallskip}
+  \ifstrequal{#2}{}{}{%
+    {\small\makebox[0.5\linewidth][l]%
+      {\BeginAccSupp{method=pdfstringdef,ActualText={\datename:}}\cvDateMarker\EndAccSupp{}%
+      ~#2}%
+    }}%
+  \ifstrequal{#3}{}{}{%
+    {\small\makebox[0.3\linewidth][l]%
+      {\BeginAccSupp{method=pdfstringdef,ActualText={\username:}}\cvUserMarker\EndAccSupp{}%
+      ~#3}%
+    }}%
+  \ifstrequal{#4}{}{}{%
+    {\small\makebox[0.2\linewidth][l]%
+      {\BeginAccSupp{method=pdfstringdef,ActualText={\usersname:}}\cvUsersMarker\EndAccSupp{}%
+        ~#4}%
     }}\par
   \medskip\normalsize
 }
 
 \newcommand{\cveventv}[1]{%
   \ifstrequal{#1}{}{}{
-  \textbf{\color{accent}#1}\par
-  \smallskip}
+  \textbf{\color{accent}#1}}%\par
+  %\smallskip}
   \normalsize
 }
 

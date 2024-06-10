@@ -19,7 +19,7 @@
 %% See http://texdoc.net/pkg/fontawesome5 for full list of symbols.
 
 % Change the page layout if you need to
-\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=0cm}
 
 % The paracol package lets you typeset columns of text in parallel
 \usepackage{paracol}
@@ -103,6 +103,10 @@
 
 \personalinfo{%
   % Not all of these are required!
+  \lang{English: Fluent}
+  \lang{Japanese: Fluent, JLPT N1}
+  \lang{Korean: Native}\\
+  \smallskip
   \email{kmc8907@gmail.com}
   \phone{080-9801-7956}
   \location{Greater Tokyo, Japan}
@@ -136,45 +140,58 @@
 % \AtBeginEnvironment{itemize}{\small}
 
 %% Set the left/right column width ratio to 6:4.
-\columnratio{0.6}
+\columnratio{1}
 
 % Start a 2-column paracol. Both the left and right columns will automatically
 % break across pages if things get too long.
-\begin{paracol}{2}
+%\begin{paracol}{2}
+\cvsection{About Me}
+\begin{quote}
+I'm an Astrophysicist used to analyzing large datasets to find astronomical signals and recently graduated from Le Wagon Data Scientist \& AI boot camp. I'm seeking to utilize programming skills backed by my scientific background and data science knowledge.
+\end{quote}
+
 \cvsection{Experience}
 
-\cvevent{Graduate Research Assistant, Ph.D.}{International Center for Hadron Astrophysics (ICEHAP)}{April 2017 -- December 2023}{Chiba University}
+\cvevent{Graduate Research Assistant, Ph.D.}{International Center for Hadron Astrophysics (ICEHAP)}{April 2017 -- December 2023}{Chiba University}{}{}
+
+\cvsubevent{\href{https://user-web.icecube.wisc.edu/~mkim/ARA_MF/index.html}{Search for Ultra-high Energy Neutrinos from Askaryan Radio Array (ARA) by Template Method \faLink}}{April 2018 -- December 2023}{Role: Project Leader}{Team size: 6}
 \begin{itemize}
-\item \href{https://user-web.icecube.wisc.edu/~mkim/ARA_MF/index.html}{Search for Ultra-high Energy Neutrinos from Askaryan Radio Array (ARA) by Template Method \faLink}
-\item Classified astronomical signal by {\bf statistical-oriented Principal Component Analysis (PCA)}, after obtaining features from {\bf ${\sim}$200 TB dataset} of radio-frequency data that measured below the South Pole.
-\item Implemented automation solutions for utilizing {\bf large CPU \& GPU clusters} by building {\bf scientific Python \& C++ packages} to streamline data analysis workflows and enhance productivity, leading to {\bf wide use by international collaborators}.
-\item Implemented physics techniques, such as the {\bf Fast Fourier Transform (FFT)}, {\bf Interferometry}, and the {\bf Matched Filter}, into the package for {\bf feature extraction}.
+\item Classified astronomical signal by {\bf Principal Component Analysis (PCA)}, after obtaining features from {\bf ${\sim}$200 TB} of radio-frequency dataset. 
+\begin{itemize}
 \item Optimized the PCA based on {\bf Frequentist Statistics} and {\bf Pseudo Experiment}.
-\item Evaluated \& quantified results by using statistical techniques, such as calculating {\bf statistical significance}, including {\bf systematic uncertainty}, and {\bf Monte Carlo simulation}.
+\item Implemented the {\bf Fast Fourier Transform (FFT)}, {\bf Interferometry}, and the {\bf Matched Filter}, for {\bf feature extraction}.
+\end{itemize}
+\item Implemented analysis pipeline used by {\bf large CPU \& GPU clusters} developed with {\bf scientific Python \& C++ packages}. It leads to {\bf wide use by international collaborators}.
+\item Evaluated results by calculating {\bf statistical significance}, including {\bf systematic uncertainty}, and {\bf Monte Carlo simulation}.
+\end{itemize}
+\cvsubevent{Development of In Situ Antenna Model for Simulation}{April 2017 -- March 2019}{Role: Data Management}{Team size: 4}
+\begin{itemize}
+\item Performed {\bf high-precision calibration for the radio-frequency antenna} to measure property.
+\item {\bf Extracted feature pattern} from raw data after noise \& signal analysis.
 \end{itemize}
 \divider
 
-\cvevent{Graduate Research Assistant, MSc.}{Neutrino AstroParticle Physics Lab (NAPPL)}{March 2015 -- February 2017}{SungKyunKwan University}
+\cvevent{Graduate Research Assistant, MSc.}{Neutrino AstroParticle Physics Lab (NAPPL)}{March 2015 -- February 2017}{SungKyunKwan University}{}{}
+\cvsubevent{\href{https://pos.sissa.it/236/1145/pdf}{IceCube Camera System to Study Properties of the Antarctic Ice \faLink}}{March 2015 -- February 2017}{Role: Project Leader}{Team size: 5}
 \begin{itemize}
-\item \href{https://pos.sissa.it/236/1145/pdf}{IceCube, a large-scale scientific detector, Camera System to Study Properties of the Antarctic Ice \faLink}
 \item Classified intrinsic camera noise appearing in extremely low-temperature conditions from images using {\bf feature extraction}.
 \item Developed {\bf Python package} to control the camera by {\bf Raspberry Pi} and {\bf automatic data collection}.
 \item Evaluated the performance of camera system by applying statistical techniques to {\bf large image datasets}.
 \end{itemize}
-\divider
+%\divider
 
-\cvevent{Japanese to English \& Korean Translator}{Wovn.io}{February 2018 -- August 2018}{Tokyo}
-\begin{itemize}
-\item Provided translation services and real-time deployment for the client company website written in Japanese, incorporating cultural nuances to enhance readability and accessibility.
-\end{itemize}
+%\cvevent{Japanese to English \& Korean Translator}{Wovn.io}{February 2018 -- August 2018}{Tokyo}{Role: Translator}{Team size: 5}
+%\begin{itemize}
+%\item Provided translation services and real-time deployment for the client company website written in Japanese, incorporating cultural nuances to enhance readability and accessibility.
+%\end{itemize}
 \medskip
 
 \cvsection{Project}
 
-\cvevent{\href{https://github.com/MyoungchulK/Sound_To_Symphony_LeWgon}{Sound to Symphony (AI Music Generation) \faLink}}{Le Wagon Data Science \& AI Bootcamp}{January 2024 -- March 2024}{Le Wagon, Tokyo}
+\cvevent{\href{https://github.com/MyoungchulK/Sound_To_Symphony_LeWgon}{Sound to Symphony (AI Music Generation) \faLink}}{Le Wagon Data Science \& AI Bootcamp}{January 2024 -- March 2024}{Le Wagon, Tokyo}{Role: Data Management}{Team size: 4}
 \begin{itemize}
-\item Generates completely new music by {\bf Recurrent Neural Network (RNN)} that can be easily customizable by musical software
-\item {\bf Architectures RNN model for learning musical patterns} from large classical music datasets that are expressed in numerical format. 
+\item Generates new music by {\bf Recurrent Neural Network (RNN)} that can be easily customizable by musical software
+\item {\bf Architectures RNN to learn musical patterns} from {\bf large classical music datasets} that are expressed in numerical form. 
 \item Deployed the project into the {\bf Streamlit} by utilizing {\bf FastAPI}
 \item Built the connection between generated music and musical software Abelton
 \end{itemize}
@@ -186,7 +203,7 @@
 
 \cvsection{Education}
 
-\cvevent{Data Science \& AI Bootcamp}{Le Wagon}{January 2024 -- March 2024}{Japan}
+\cvevent{Data Science \& AI Bootcamp}{Le Wagon}{January 2024 -- March 2024}{Japan}{}{}
 \begin{itemize}
 \item Thorough study in Python for Data Science, with expertise in data extraction, manipulation, and visualization, backed by a strong foundation in statistics and linear algebra.
 \item Delving into Machine Learning and Deep Learning, with practical application in building comprehensive workflows utilizing Scikit-Learn and designing neural network architectures.
@@ -194,69 +211,64 @@
 \end{itemize}
 \divider
 
-\cvevent{Completion of Ph.D. program (ABD), Physics}{Chiba University}{April 2017 -- December 2023}{Japan}
+\cvevent{Completion of Ph.D. program (ABD), AstroParticle Physics}{Chiba University}{April 2017 -- December 2023}{Japan}{}{}
 \begin{itemize}
 \item Research topic: Search for Ultra-high Energy Neutrinos Using Eight Years of Data from Two ARA Stations by the Neutrino Template Method
 \end{itemize}
 \divider
 
-\cvevent{Master of Science, Physics}{SungKyunKwan University}{March 2015 -- February 2017}{South Korea}
+\cvevent{Master of Science, AstroParticle Physics}{SungKyunKwan University}{March 2015 -- February 2017}{South Korea}{}{}
 \begin{itemize}
 \item Thesis title: Performance study of camera system for the IceCube-Gen2 detector
 \end{itemize}
 \divider
 
-\cvevent{Bachelor in Science, Physics}{SungKyunKwan University}{March 2011 -- February 2015}{South Korea}
+\cvevent{Bachelor in Science, Physics}{SungKyunKwan University}{March 2011 -- February 2015}{South Korea}{}{}
 
-\switchcolumn
+%\switchcolumn
 
-\cvsection{About Me}
 
-\begin{quote}
-I'm an Astrophysicist used to analyzing large datasets to find astronomical signals and recently graduated from Le Wagon Data Scientist \& AI boot camp. 
-
-Seeking to utilize programming skills backed by my scientific background and data science knowledge.
-\end{quote}
 
 \cvsection{Technical Skills}
 
-\cveventv{Coding Tools}
+\cveventv{Coding Tools: }
 \cvtag{Python}
 \cvtag{C++}
 \cvtag{ROOT}
-\cvtag{Vim}\\
+\cvtag{Vim}
 \cvtag{HTCondor}
 \cvtag{CVMFS}
-\cvtag{Latex}\\
+\cvtag{Latex}
 \cvtag{G-Collab \& Jupyter}
 
 \dividerv\smallskip
 
-\cveventv{Data Analytics}
+\cveventv{Data Analytics: }
 \cvtag{NumPy}
 \cvtag{SciPy}
 \cvtag{Scikit-learn}
-\cvtag{Pandas}\\
+\cvtag{Pandas}
 \cvtag{SQL}
 \cvtag{Matplotlib}
 \cvtag{Seaborn}
 
 \dividerv\smallskip
 
-\cveventv{Modelling}
+\cveventv{Modelling: }
 \cvtag{TensorFlow}
-\cvtag{Deep Learning}\\
+\cvtag{Deep Learning}
 \cvtag{Unsupervised Leaning}
 \cvtag{NLP}
 \cvtag{CNN}
-\cvtag{Time series}
-\cvtag{Ensemble Methods}\\
+\cvtag{Time series}\\
+\quad\quad\quad\quad\quad\qquad
+\cvtag{Ensemble Methods}
 \cvtag{Statsmodels}
 \cvtag{LLM}
 
 \dividerv\smallskip
 
-\cveventv{Deployment}
+\cveventv{Deployment: }
 \cvtag{GCP}
 \cvtag{Docker}
 \cvtag{FastAPI}
@@ -264,32 +276,22 @@ Seeking to utilize programming skills backed by my scientific background and dat
 
 \dividerv\smallskip
 
-\cveventv{Hardware Experience}
+\cveventv{Hardware Experience: }
 \cvtag{Electronics}
 \cvtag{Optics}
-
-\cvsection{Languages}
-
-\cvskillv{English}{Fluent}\\
-\divider
-
-\cvskillv{Japanese}{JLPT N1, Fluent}\\ %% Supports X.5 values.
-\divider
-
-\cvskillv{Korean}{Native}\\
+\medskip
+%\cvsection{Languages}
+%\cvskillv{English}{Fluent}\\
+%\divider
+%\cvskillv{Japanese}{JLPT N1, Fluent}\\ %% Supports X.5 values.
+%\divider
+%\cvskillv{Korean}{Native}\\
 
 %% Yeah I didn't spend too much time making all the
 %% spacing consistent... sorry. Use \smallskip, \medskip,
 %% \bigskip, \vspace etc to make adjustments.
-\medskip
 
-\cvsection{Interests}
 
-\cvtag{Classical Music}\\
-\cvtag{Orchestra}
-\cvtag{Contrabass}\\
-\cvtag{Universe}
-\cvtag{Fourier Transform}
 
 % Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
 % \wheelchart{outer radius}{inner radius}{
@@ -302,7 +304,23 @@ Seeking to utilize programming skills backed by my scientific background and dat
 
 % \divider
 
-\newpage
+%\newpage
+
+\cvsection{Selected Publications}
+
+%% Specify your last name(s) and first name(s) as given in the .bib to automatically bold your own name in the publications list.
+%% One caveat: You need to write \bibnamedelima where there's a space in your name for this to work properly; or write \bibnamedelimi if you use initials in the .bib
+%% You can specify multiple names, especially if you have changed your name or if you need to highlight multiple authors.
+\mynames{Lim/Lian\bibnamedelima Tze,
+  Wong/Lian\bibnamedelima Tze,
+  Lim/Tracy,
+  Lim/L.\bibnamedelimi T.}
+%% MAKE SURE THERE IS NO SPACE AFTER THE FINAL NAME IN YOUR \mynames LIST
+
+\nocite{*}
+
+\printbibliography[heading=pubtype,title={\printinfo{\faFile*[regular]}{Journal Articles}},type=article]
+
 
 \cvsection{Awards}
 
@@ -322,22 +340,16 @@ Seeking to utilize programming skills backed by my scientific background and dat
 
 \cvachievement{\faTrophy}{CK Research student scholarship}{Research Assistant in Bsc., 2014}
 
-\cvsection{Selected\\Publications}
 
-%% Specify your last name(s) and first name(s) as given in the .bib to automatically bold your own name in the publications list.
-%% One caveat: You need to write \bibnamedelima where there's a space in your name for this to work properly; or write \bibnamedelimi if you use initials in the .bib
-%% You can specify multiple names, especially if you have changed your name or if you need to highlight multiple authors.
-\mynames{Lim/Lian\bibnamedelima Tze,
-  Wong/Lian\bibnamedelima Tze,
-  Lim/Tracy,
-  Lim/L.\bibnamedelimi T.}
-%% MAKE SURE THERE IS NO SPACE AFTER THE FINAL NAME IN YOUR \mynames LIST
+\cvsection{Interests}
 
-\nocite{*}
+\cvtag{Classical Music}
+\cvtag{Orchestra}
+\cvtag{Contrabass}
+\cvtag{Universe}
+\cvtag{Fourier Transform}
 
-\printbibliography[heading=pubtype,title={\printinfo{\faFile*[regular]}{Journal Articles}},type=article]
-
-\end{paracol}
+%\end{paracol}
 
 
 \end{document}
